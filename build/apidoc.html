@@ -1,0 +1,1453 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/MatAtBread/nodent#readme"
+
+    >nodent (v3.0.17)</a>
+</h1>
+<h4>NoDent - Asynchronous Javascript language extensions</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodent">module nodent</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodent.nodent">
+            function <span class="apidocSignatureSpan"></span>nodent
+            <span class="apidocSignatureSpan">(initOpts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodent.EagerThenable">
+            function <span class="apidocSignatureSpan">nodent.</span>EagerThenable
+            <span class="apidocSignatureSpan">(tick)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodent.Thenable">
+            function <span class="apidocSignatureSpan">nodent.</span>Thenable
+            <span class="apidocSignatureSpan">(func)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodent.asyncify">
+            function <span class="apidocSignatureSpan">nodent.</span>asyncify
+            <span class="apidocSignatureSpan">(promiseProvider)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodent.map">
+            function <span class="apidocSignatureSpan">nodent.</span>map
+            <span class="apidocSignatureSpan">(nodent, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodent.setCompileOptions">
+            function <span class="apidocSignatureSpan">nodent.</span>setCompileOptions
+            <span class="apidocSignatureSpan">(set, compiler)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodent.setDefaultCompileOptions">
+            function <span class="apidocSignatureSpan">nodent.</span>setDefaultCompileOptions
+            <span class="apidocSignatureSpan">(compiler, env)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodent.</span>Thenable.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodent.</span>arboriculture</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodent.</span>parser</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nodent.</span>runtime</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodent.Thenable">module nodent.Thenable</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodent.Thenable.Thenable">
+            function <span class="apidocSignatureSpan">nodent.</span>Thenable
+            <span class="apidocSignatureSpan">(func)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodent.Thenable.reject">
+            function <span class="apidocSignatureSpan">nodent.Thenable.</span>reject
+            <span class="apidocSignatureSpan">(err)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodent.Thenable.resolve">
+            function <span class="apidocSignatureSpan">nodent.Thenable.</span>resolve
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nodent.Thenable.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodent.Thenable.prototype">module nodent.Thenable.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodent.Thenable.prototype.reject">
+            function <span class="apidocSignatureSpan">nodent.Thenable.prototype.</span>reject
+            <span class="apidocSignatureSpan">(reason)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodent.Thenable.prototype.resolve">
+            function <span class="apidocSignatureSpan">nodent.Thenable.prototype.</span>resolve
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodent.Thenable.prototype.then">
+            function <span class="apidocSignatureSpan">nodent.Thenable.prototype.</span>then
+            <span class="apidocSignatureSpan">(onF, onR)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodent.arboriculture">module nodent.arboriculture</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodent.arboriculture.asynchronize">
+            function <span class="apidocSignatureSpan">nodent.arboriculture.</span>asynchronize
+            <span class="apidocSignatureSpan">(pr, __sourceMapping, opts, logger)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodent.arboriculture.babelLiteralNode">
+            function <span class="apidocSignatureSpan">nodent.arboriculture.</span>babelLiteralNode
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodent.arboriculture.printNode">
+            function <span class="apidocSignatureSpan">nodent.arboriculture.</span>printNode
+            <span class="apidocSignatureSpan">(n)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodent.map">module nodent.map</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodent.map.map">
+            function <span class="apidocSignatureSpan">nodent.</span>map
+            <span class="apidocSignatureSpan">(nodent, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodent.map.MapError">
+            function <span class="apidocSignatureSpan">nodent.map.</span>MapError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodent.parser">module nodent.parser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodent.parser.parse">
+            function <span class="apidocSignatureSpan">nodent.parser.</span>parse
+            <span class="apidocSignatureSpan">(code, config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodent.parser.part">
+            function <span class="apidocSignatureSpan">nodent.parser.</span>part
+            <span class="apidocSignatureSpan">(code, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nodent.parser.treeWalker">
+            function <span class="apidocSignatureSpan">nodent.parser.</span>treeWalker
+            <span class="apidocSignatureSpan">(n, walker, state)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nodent.runtime">module nodent.runtime</a><ol>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodent" id="apidoc.module.nodent">module nodent</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodent.nodent" id="apidoc.element.nodent.nodent">
+        function <span class="apidocSignatureSpan"></span>nodent
+        <span class="apidocSignatureSpan">(initOpts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function initialize(initOpts){
+	// Validate the options
+<span class="apidocCodeCommentSpan">/* initOpts:{
+ * 		log:function(msg),
+ * 		augmentObject:boolean,
+ * 		extension:string?
+ * 		dontMapStackTraces:boolean
+ */
+</span>	if (!initOpts)
+		initOpts = {} ;
+	else {
+		// Throw an error for any options we don&#x27;t know about
+		for (var k in initOpts) {
+			if (k===&#x22;use&#x22;)
+				continue ; // deprecated
+			if (!config.hasOwnProperty(k))
+				throw new Error(&#x22;NoDent: unknown option: &#x22;+k+&#x22;=&#x22;+JSON.stringify(initOpts[k])) ;
+		}
+	}
+
+
+	if (compiler) {
+		compiler.setOptions(initOpts);
+	} else {
+		// Fill in any missing options with their default values
+		Object.keys(config).forEach(function(k){
+			if (!(k in initOpts))
+				initOpts[k] = config[k] ;
+		}) ;
+		compiler = new NodentCompiler(initOpts) ;
+	}
+
+	// If anyone wants to mapStackTraces, do it. The augmentation does not depend on the config options
+	if (!initOpts.dontMapStackTraces) {
+		// This function is part of the V8 stack trace API, for more info see:
+		// http://code.google.com/p/v8/wiki/JavaScriptStackTraceApi
+		Error.prepareStackTrace = prepareMappedStackTrace ;
+	}
+
+	setGlobalEnvironment(initOpts) ;
+
+	/* If we&#x27;ve not done it before, create a compiler for &#x27;.js&#x27; scripts */
+	// Create a new compiler
+
+	var nodentLoaders = [];
+	function compareSemVer(a,b) {
+		a = a.split(&#x27;.&#x27;) ;
+		b = b.split(&#x27;.&#x27;) ;
+		for (var i=0;i&#x3c;3;i++) {
+			if (a[i]&#x3c;b[i]) return -1 ;
+			if (a[i]&#x3e;b[i]) return 1 ;
+		}
+		return 0 ;
+	}
+
+    function versionAwareNodentJSLoader(mod,filename) {
+        if (filename.match(/nodent\/nodent\.js$/)) {
+            var downLevel = {path:filename.replace(/\/node_modules\/nodent\/nodent\.js$/,&#x22;&#x22;)} ;
+            if (downLevel.path) {
+                downLevel.version = JSON.parse(fs.readFileSync(filename.replace(/nodent\.js$/,&#x22;package.json&#x22;))).version ;
+                // Load the specified nodent
+                stdJSLoader(mod,filename) ;
+
+                // If the version of nodent we&#x27;ve just loaded is lower than the
+                // current (version-aware) version, hook the initialzer
+                // so we can replace the JS loader after it&#x27;s been run.
+                if (compareSemVer(downLevel.version,NodentCompiler.prototype.version)&#x3c;0) {
+                    downLevel.originalNodentLoader = mod.exports ;
+                    mod.exports = function(){
+                        var previousJSLoader = require.extensions[&#x27;.js&#x27;] ;
+                        var defaultNodentInstance = downLevel.originalNodentLoader.apply(this,arguments) ;
+                        downLevel.jsCompiler = require.extensions[&#x27;.js&#x27;] ;
+                        require.extensions[&#x27;.js&#x27;] = previousJSLoader ;
+                        setGlobalEnvironment(initOpts) ;
+                        return defaultNodentInstance ;
+                    } ;
+                    Object.keys(downLevel.originalNodentLoader).forEach(function(k){
+                        mod.exports[k] = downLevel.originalNodentLoader[k] ;
+                    }) ;
+                    nodentLoaders.push(downLevel) ;
+                    nodentLoaders = nodentLoaders.sort(function(a,b){
+                        return b.path.length - a.path.length ;
+                    }) ;
+                }
+            }
+        } else if (filename.match(/node_modules\/nodent\/.*\.js$/)) {
+            // Things inside nodent always use the standard loader
+            return stdJSLoader(mod,filename) ;
+        } else {
+            // The the appropriate loader for this file
+            for (var n=0; n&#x3c;nodentLoaders.length; n++) {
+                if (filename.slice(0,nodentLoaders[n].path.length)==nodentLoaders[n].path) {
+                    //console.log(&#x22;Using nodent@&#x22;,nodentLoaders[n].version,&#x22;to load&#x22;,filename) ;
+                    if (!nodentLoaders[n].jsCompiler) {
+                        // The client app loaded, but never initialised nodent (so it can only
+                        // be using library/runtime functions, not the require-hook compiler)
+                        return stdJSLoader(mod,filename) ;
+                    } else {
+                        if (nodentLoaders[n].jsCompiler === versi ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodent.EagerThenable" id="apidoc.element.nodent.EagerThenable">
+        function <span class="apidocSignatureSpan">nodent.</span>EagerThenable
+        <span class="apidocSignatureSpan">(tick)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">EagerThenable = function (tick){ tick = tick || (typeof process===&#x22;object&#x22; &#x26;&#x26; process.nextTick) || (typeof setImmediate===&#x22;function&#x22; &#x26;&#x26; setImmediate
+) || function(f){setTimeout(f,0)}; var soon = (function () { var fq = [], fqStart = 0, bufferSize = 1024; function callQueue() {
+while (fq.length - fqStart) { try { fq[fqStart]() } catch(ex) { } fq[fqStart++] = undefined; if (fqStart === bufferSize) { fq.splice
+(0, bufferSize); fqStart = 0; } } } return function (fn) { fq.push(fn); if (fq.length - fqStart === 1) tick(callQueue); }; })();
+function Zousan(func) { if (func) { var me = this; func(function (arg) { me.resolve(arg); }, function (arg) { me.reject(arg); }); } }
+Zousan.prototype = { resolve: function (value) { if (this.state !== undefined) return; if (value === this) return this.reject(new
+ TypeError(&#x22;Attempt to resolve promise with self&#x22;)); var me = this; if (value &#x26;&#x26; (typeof value === &#x22;function&#x22; || typeof value === &#x22;
+object&#x22;)) { try { var first = 0; var then = value.then; if (typeof then === &#x22;function&#x22;) { then.call(value, function (ra) { if (!
+first++) { me.resolve(ra); } }, function (rr) { if (!first++) { me.reject(rr); } }); return; } } catch (e) { if (!first) this.reject
+(e); return; } } this.state = STATE_FULFILLED; this.v = value; if (me.c) soon(function () { for (var n = 0, l = me.c.length;n &#x3c;
+l; n++) STATE_FULFILLED(me.c[n], value); }); }, reject: function (reason) { if (this.state !== undefined) return; this.state = STATE_REJECTED
+; this.v = reason; var clients = this.c; if (clients) soon(function () { for (var n = 0, l = clients.length;n &#x3c; l; n++) STATE_REJECTED
+(clients[n], reason); }); }, then: function (onF, onR) { var p = new Zousan(); var client = { y: onF, n: onR, p: p }; if (this.state
+ === undefined) { if (this.c) this.c.push(client); else this.c = [client]; } else { var s = this.state, a = this.v; soon(function
+ () { s(client, a); }); } return p; } }; function STATE_FULFILLED(c, arg) { if (typeof c.y === &#x22;function&#x22;) { try { var yret = c.
+y.call(undefined, arg); c.p.resolve(yret); } catch (err) { c.p.reject(err); } } else c.p.resolve(arg); } function STATE_REJECTED
+(c, reason) { if (typeof c.n === &#x22;function&#x22;) { try { var yret = c.n.call(undefined, reason); c.p.resolve(yret); } catch (err) {
+c.p.reject(err); } } else c.p.reject(reason); } Zousan.resolve = function (val) { if (val &#x26;&#x26; (val instanceof Zousan)) return val
+ ; var z = new Zousan(); z.resolve(val); return z; }; Zousan.reject = function (err) { if (err &#x26;&#x26; (err instanceof Zousan)) return
+ err ; var z = new Zousan(); z.reject(err); return z; }; Zousan.version = &#x22;2.3.3-nodent&#x22; ; return Zousan ; }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+#### Shipping a self-contained app to a browser, Node &#x3c;=0.10.x or other unknown environment
+`use nodent-es7` - it&#x27;s the most compatible as it doesn&#x27;t require any platform support such as Promises or Generators,
+and works on a wide range of desktop and mobile browsers.
+
+#### Shipping an app or module within Node, npm or [modern browsers supporting Promises](http://kangax.github.io/compat-table/es6
+/#test-Promise)
+`use nodent-promises` provides the most compatibility between modules and apps. If your module or library targets Node earlier than
+ v4.1.x, you should install a Promise library (e.g. rsvp, when, bluebird) or use `nodent.Thenable` to expose the Promise API. In
+ promises mode, there is no need for a runtime at all. Specifying the option `use nodent-promises {&#x22;noRuntime&#x22;:true}`
+will generate pure ES5 code at the cost of some loss in performance and increase in code size.
+
+&#x3e; **v2.x** users: `nodent.<span class="apidocCodeKeywordSpan">EagerThenable</span>()` is still defined, but as of v3 is the
+ same as the `Thenable` implementation.
+
+#### Generators
+`use nodent-generators` generates code which is reasonably easy to follow, but is best not used for anything beyond experimentation
+ as it requires an advanced browser on the client-side, or Node v4.x.x. The performance and memory overhead of generators is poor
+ - currently (Node v6.6.0) averaging 3.5 times slower compared to the es7 with &#x27;lazyThenables&#x27;.
+
+#### Engine
+`use nodent-engine` does _not_ transpile standard ES7 async/await constructs, but only transpiles the additional non-standard features
+ provided by nodent - await anywhere, async getters, async return and throw. At the time of writing, not many runtimes implement
+ async and await - Chrome v53 does with command line flags, and Edge 14 are examples. On Chrome, performance is better than generators
+, but not quite as good as Promises, and still less than half the speed of ES7 mode. In promises mode, there is no need for a runtime
+ at all. Specifying the option `use nodent-engine {&#x22;noRuntime&#x22;:true}` will generate pure ES5 code at the cost of some
+loss in performance and increase in code size.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodent.Thenable" id="apidoc.element.nodent.Thenable">
+        function <span class="apidocSignatureSpan">nodent.</span>Thenable
+        <span class="apidocSignatureSpan">(func)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Zousan(func) { if (func) { var me = this; func(function (arg) { me.resolve(arg); }, function (arg) { me.reject(arg); }); } }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodent.asyncify" id="apidoc.element.nodent.asyncify">
+        function <span class="apidocSignatureSpan">nodent.</span>asyncify
+        <span class="apidocSignatureSpan">(promiseProvider)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function asyncify(promiseProvider) {
+	promiseProvider = promiseProvider || Thenable ;
+	return function(obj,filter,suffix) {
+		if (Array.isArray(filter)) {
+			var names = filter ;
+			filter = function(k,o) {
+				return names.indexOf(k)&#x3e;=0 ;
+			}
+		} else {
+			filter = filter || function(k,o) {
+				return (!k.match(/Sync$/) || !(k.replace(/Sync$/,&#x22;&#x22;) in o)) ;
+			};
+		}
+
+		if (!suffix)
+			suffix = &#x22;&#x22; ;
+
+		var o = Object.create(obj) ;
+		for (var j in o) (function(){
+			var k = j ;
+			try {
+				if (typeof obj[k]===&#x27;function&#x27; &#x26;&#x26; (!o[k+suffix] || !o[k+suffix].isAsync) &#x26;&#x26; filter(k,o)) {
+					o[k+suffix] = function() {
+						var a = Array.prototype.slice.call(arguments) ;
+						var resolver = function($return,$error) {
+							var cb = function(err,ok){
+								if (err)
+									return $error(err) ;
+								switch (arguments.length) {
+								case 0: return $return() ;
+								case 2: return $return(ok) ;
+								default: return $return(Array.prototype.slice.call(arguments,1)) ;
+								}
+							} ;
+							// If more args were supplied than declared, push the CB
+							if (a.length &#x3e; obj[k].length) {
+								a.push(cb) ;
+							} else {
+								// Assume the CB is the final arg
+								a[obj[k].length-1] = cb ;
+							}
+							var ret = obj[k].apply(obj,a) ;
+						} ;
+						return new promiseProvider(resolver) ;
+					}
+					o[k+suffix].isAsync = true ;
+				}
+			} catch (ex) {
+				// Log the fact that we couldn&#x27;t augment this member??
+			}
+		})() ;
+		o[&#x22;super&#x22;] = obj ;
+		return o ;
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	var nodent = require(&#x27;nodent&#x27;)(options);
+
+Options:
+
+| Member             | Type   |                        |
+|--------------------|--------|------------------------|
+| dontMapStackTraces |boolean | default: false
+| augmentObject      |boolean | Adds `asyncify(PromiseProvider)` and `isThenable()` to Object.prototype, making expressions such
+ as `var client = new DB().<span class="apidocCodeKeywordSpan">asyncify</span>(Promise)` and `if (abc.isThenable()) await abc()`
+less verbose
+| extension          | string | extension for files to be compiled (default: &#x27;.njs&#x27;). Note that this is unused if the
+file has a `use nodent-` directive.
+| log(msg)           |function| Called when nodent has a warning or similar to show. By default they are passed to console.warn().
+Set this member to change how to record logging, or to `false` to disable logging.
+
+&#x3e; **v2.x** The flag &#x27;asyncStackTrace&#x27; has been removed as modern debuggers can do this better than nodent can. You
+ can specify it, but it is ignored.
+
+Return: a &#x27;nodent&#x27; compiler object with the following properties:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodent.map" id="apidoc.element.nodent.map">
+        function <span class="apidocSignatureSpan">nodent.</span>map
+        <span class="apidocSignatureSpan">(nodent, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">map = function (nodent, opts) {
+    if (!opts) opts = {} ;
+    if (!opts.Promise)
+        opts.Promise = global.Promise || nodent.Thenable ;
+
+	function map(what,result,asyncFn) {
+		var hasError = false ;
+		if (typeof what==&#x22;number&#x22;) {
+			var period = [] ;
+			period.length = Math.floor(what) ;
+			period.forEach = function(fn) {
+				for (var i=0; i&#x3c;period.length; i++)
+					fn.apply(null,[i,i,period]) ;
+			} ;
+			return map(period,result,asyncFn) ;
+		}
+
+		var isArray = Array.isArray(what) ;
+		var context = new MapError() ;
+		if (!asyncFn &#x26;&#x26; (typeof result in {&#x27;function&#x27;:true,&#x27;undefined&#x27;:true})) {
+			asyncFn = result ;
+			result = isArray?[]:{} ;
+		}
+		var array = isArray?what:Object.keys(what) ;
+		return new (opts.Promise)(function ($return,$error) {
+			var len = array.length ;
+			if (len==0)
+				return $return(result) ;
+
+			array.forEach(function(e,i,ar){
+				function complete(r) {
+					if (r instanceof Object &#x26;&#x26; typeof r.then===&#x22;function&#x22;)
+						return r.then(complete,completeError) ;
+					
+					var k = isArray?i:e ;
+					if (k in result) {
+						context.message = &#x22;nodent.map: multiple $returns/errors at &#x22;+k ;
+						return $error(context) ;
+					}
+					result[k] = r ;
+					len -= 1 ;
+					if (len==0) {
+						if (hasError) {
+							context.message = Object.keys(hasError).map(function(e){ return e+&#x22;: &#x22;+hasError[e].message }).join(&#x22;, &#x22;);	
+							context.results = result ;
+							return $error(context) ;
+						}
+						return $return(result) ;
+					}
+					else if (len&#x3c;0) {
+						context.message = &#x22;nodent.map: Excess $returns/errors at &#x22;+k ;
+						return $error(context) ;
+					}
+				} ;
+				function completeError(x) {
+					if (!(x instanceof Error))
+						x = new Error(x) ;
+					if (opts.throwOnError) {
+						hasError = hasError || {} ;
+						hasError[isArray?i:e] = x ;
+					}
+					complete(x) ;
+				}
+				
+				if (asyncFn) {
+					asyncFn.apply(this,arguments).then(complete,completeError);	
+				} else {
+					var f = isArray?e:what[e] ;
+					if (nodent.isThenable(f))
+						f.then(complete,completeError);
+					else
+						complete(f) ;
+				}
+			}) ;
+		});
+	}
+	map.MapError = MapError ;
+	return map ;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+					+ desc.substring(0,desc.length-1)
+					+ &#x22; =&#x3e; \u2026&#x22;+position.source+&#x22;:&#x22;+position.line+&#x22;:&#x22;+position.column
+					+ (frame.getFunctionName()?&#x22;)&#x22;:&#x22;&#x22;);
+			}
+		}
+		return &#x27;\n    at &#x27;+frame;
+	}
+	return error + stack.<span class="apidocCodeKeywordSpan">map</span>(mappedTrace).join(&#x27;&#x27;);
+}
+
+// Set the &#x27;global&#x27; references to the (backward-compatible) versions
+// required by the current version of Nodent
+function setGlobalEnvironment(initOpts) {
+	var codeGenOpts = defaultCodeGenOpts ;
+	/*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodent.setCompileOptions" id="apidoc.element.nodent.setCompileOptions">
+        function <span class="apidocSignatureSpan">nodent.</span>setCompileOptions
+        <span class="apidocSignatureSpan">(set, compiler)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setCompileOptions = function (set, compiler) {
+	optionSet[set] = optionSet[set] || copyObj([defaultCodeGenOpts]);
+	compiler &#x26;&#x26; Object.keys(compiler).forEach(function(k){
+		if (!(k in defaultCodeGenOpts))
+			throw new Error(&#x22;NoDent: unknown compiler option: &#x22;+k) ;
+		optionSet[set][k] = compiler[k] ;
+	}) ;
+	return initialize ;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodent.setDefaultCompileOptions" id="apidoc.element.nodent.setDefaultCompileOptions">
+        function <span class="apidocSignatureSpan">nodent.</span>setDefaultCompileOptions
+        <span class="apidocSignatureSpan">(compiler, env)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setDefaultCompileOptions = function (compiler, env) {
+	if (compiler) {
+		Object.keys(compiler).forEach(function(k){
+			if (!(k in defaultCodeGenOpts))
+				throw new Error(&#x22;NoDent: unknown compiler option: &#x22;+k) ;
+			defaultCodeGenOpts[k] = compiler[k] ;
+		}) ;
+	}
+
+	env &#x26;&#x26; Object.keys(env).forEach(function(k){
+		if (!(k in env))
+			throw new Error(&#x22;NoDent: unknown configuration option: &#x22;+k) ;
+		config[k] = env[k] ;
+	}) ;
+	return initialize ;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+|-------|-----|------------------------|
+|Thenable			|function|Nodent&#x27;s built in Promise/A+ implementation|
+|asyncify			|object|Method to transform methods from callbacks to async functions by wrapping in Promises|
+|setDefaultCompileOptions (compiler[,env])|function|Set the defaults for the compiler and environment. This should be called before
+ the first compiler is created. The default environment options (`log augmentObject extension dontMapStackTraces asyncStackTrace
+`) will be used when the corresponding option is missing when the compiler is created. The compiler options (`sourcemap` and default
+ symbol names) must be set before the first compiler is created. The other compilation options (`es7 promises generators engine`)
+are set by the corresponding directive|
+|setCompileOptions (name,compiler)|function|Set the compilation options for a named [directive](#advanced-configuration) for the
+ compiler. This should be called before the first compiler is created.
+
+	// Turn off sourcemap generation:
+	nodentMeta.<span class="apidocCodeKeywordSpan">setDefaultCompileOptions</span>({sourcemap:false},{asyncStackTrace:true})
+
+	// Access values that are global to all nodent compiler instances
+	var Promise = global.Promise || nodentMeta.Thenable ;	// Set a Promise provider for this module
+	nodentMeta.asyncify
+
+You still need to (at least once) create the compiler:
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodent.Thenable" id="apidoc.module.nodent.Thenable">module nodent.Thenable</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodent.Thenable.Thenable" id="apidoc.element.nodent.Thenable.Thenable">
+        function <span class="apidocSignatureSpan">nodent.</span>Thenable
+        <span class="apidocSignatureSpan">(func)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Zousan(func) { if (func) { var me = this; func(function (arg) { me.resolve(arg); }, function (arg) { me.reject(arg); }); } }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodent.Thenable.reject" id="apidoc.element.nodent.Thenable.reject">
+        function <span class="apidocSignatureSpan">nodent.Thenable.</span>reject
+        <span class="apidocSignatureSpan">(err)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reject = function (err) { if (err &#x26;&#x26; (err instanceof Zousan)) return err ; var z = new Zousan(); z.reject(err); return z; }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodent.Thenable.resolve" id="apidoc.element.nodent.Thenable.resolve">
+        function <span class="apidocSignatureSpan">nodent.Thenable.</span>resolve
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolve = function (val) { if (val &#x26;&#x26; (val instanceof Zousan)) return val ; var z = new Zousan(); z.resolve(val); return z; }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+In this case, the expression will need wrapping before it is awaited on by Nodent. You can emulate this behaviour by specifying
+the code-generation flag &#x27;wrapAwait&#x27; in your package.json or after the nodent directive:
+
+		&#x27;use nodent {&#x22;wrapAwait&#x22;:true}&#x27;;
+
+Wrapping every value in a Promise increases the time taken to invoke an async function by about 20%. An alternative to wrapping
+everything is to only wrap expression where this might be the case explicitly:
+
+		var x = await Promise.<span class="apidocCodeKeywordSpan">resolve</span>(maybeThisIsAPromise()) ;
+
+or
+
+		var isThenable = require(&#x27;nodent&#x27;).isThenable ;
+			...
+	var x = maybeThisIsAPromise() ;
+	if (isThenable(x))
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodent.Thenable.prototype" id="apidoc.module.nodent.Thenable.prototype">module nodent.Thenable.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodent.Thenable.prototype.reject" id="apidoc.element.nodent.Thenable.prototype.reject">
+        function <span class="apidocSignatureSpan">nodent.Thenable.prototype.</span>reject
+        <span class="apidocSignatureSpan">(reason)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reject = function (reason) { if (this.state !== undefined) return; this.state = STATE_REJECTED; this.v = reason; var clients = this.c; if
+ (clients) soon(function () { for (var n = 0, l = clients.length;n &#x3c; l; n++) STATE_REJECTED(clients[n], reason); }); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodent.Thenable.prototype.resolve" id="apidoc.element.nodent.Thenable.prototype.resolve">
+        function <span class="apidocSignatureSpan">nodent.Thenable.prototype.</span>resolve
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolve = function (value) { if (this.state !== undefined) return; if (value === this) return this.reject(new TypeError(&#x22;Attempt to resolve
+ promise with self&#x22;)); var me = this; if (value &#x26;&#x26; (typeof value === &#x22;function&#x22; || typeof value === &#x22;object&#x22;)) { try { var first
+ = 0; var then = value.then; if (typeof then === &#x22;function&#x22;) { then.call(value, function (ra) { if (!first++) { me.resolve(ra); } },
+function (rr) { if (!first++) { me.reject(rr); } }); return; } } catch (e) { if (!first) this.reject(e); return; } } this.state =
+STATE_FULFILLED; this.v = value; if (me.c) soon(function () { for (var n = 0, l = me.c.length;n &#x3c; l; n++) STATE_FULFILLED(me.c[n
+], value); }); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+In this case, the expression will need wrapping before it is awaited on by Nodent. You can emulate this behaviour by specifying
+the code-generation flag &#x27;wrapAwait&#x27; in your package.json or after the nodent directive:
+
+		&#x27;use nodent {&#x22;wrapAwait&#x22;:true}&#x27;;
+
+Wrapping every value in a Promise increases the time taken to invoke an async function by about 20%. An alternative to wrapping
+everything is to only wrap expression where this might be the case explicitly:
+
+		var x = await Promise.<span class="apidocCodeKeywordSpan">resolve</span>(maybeThisIsAPromise()) ;
+
+or
+
+		var isThenable = require(&#x27;nodent&#x27;).isThenable ;
+			...
+	var x = maybeThisIsAPromise() ;
+	if (isThenable(x))
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodent.Thenable.prototype.then" id="apidoc.element.nodent.Thenable.prototype.then">
+        function <span class="apidocSignatureSpan">nodent.Thenable.prototype.</span>then
+        <span class="apidocSignatureSpan">(onF, onR)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">then = function (onF, onR) { var p = new Zousan(); var client = { y: onF, n: onR, p: p }; if (this.state === undefined) { if (this.c) this
+.c.push(client); else this.c = [client]; } else { var s = this.state, a = this.v; soon(function () { s(client, a); }); } return
+p; }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+* **lazyThenables**
+
+&#x3e; **v2.x** users - lazyThenables are _only_ available in -es7 mode in v3, and the nodent.Thenable implementation is _not_ lazy
+, as it was in v2.x.
+
+Invoking an async function _without_ a preceding `await` (simply by calling it) executes the function body but you can&#x27;t get
+ the result. This is useful for initiating &#x27;background&#x27; things, or running async functions for their side effects. This
+ is in compliance with the ES7 specification.
+
+However, this has a performance overhead. For maximum performance, you can specify this code generation option in `use nodent-es7
+ {&#x22;lazyThenables&#x22;:true}` mode. In this mode, if you call the async function the body _is not actually executed_ until
+resolved with an `await` (or a `.<span class="apidocCodeKeywordSpan">then</span>()`). If you know your code always uses `await`,
+you can use this option to improve performance.
+
+In `use nodent-promises` mode, it is the implementation of the Promise that determines the execution scheduling and performance.
+The table below is a summary of modes and execution semantics. You can test the performance on your own hardware with the following
+ command. Note the relative performance is a worst case, since the test does nothing other than make async calls in a loop.
+
+		./nodent.js tests tests/semantics/perf.js
+
+| Mode  	 | Flags / Implementation 	| Lazy / Eager  | Possibly sync resolution  | Performance (relative) |
+|------------|--------------------------|---------------|---------------------------|------------------------|
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodent.arboriculture" id="apidoc.module.nodent.arboriculture">module nodent.arboriculture</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodent.arboriculture.asynchronize" id="apidoc.element.nodent.arboriculture.asynchronize">
+        function <span class="apidocSignatureSpan">nodent.arboriculture.</span>asynchronize
+        <span class="apidocSignatureSpan">(pr, __sourceMapping, opts, logger)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">asynchronize = function (pr, __sourceMapping, opts, logger) {
+    try {
+        return asynchronize(pr, __sourceMapping, opts, logger);
+    } catch (ex) {
+        if (ex instanceof SyntaxError) {
+            var l = pr.origCode.substr(ex.pos - ex.loc.column);
+            l = l.split(&#x22;\n&#x22;)[0];
+            ex.message += &#x22; (nodent)\n&#x22; + l + &#x22;\n&#x22; + l.replace(/[\S ]/g, &#x22;-&#x22;).substring(0, ex.loc.column) + &#x22;^&#x22;;
+            ex.stack = &#x22;&#x22;;
+        }
+        throw ex;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+function compileNodentedFile(nodent,log) {
+    log = log || nodent.log ;
+	return function(mod, filename, parseOpts) {
+		var content = stripBOM(fs.readFileSync(filename, &#x27;utf8&#x27;));
+		var pr = nodent.parse(content,filename,parseOpts);
+		parseOpts = parseOpts || parseCompilerOptions(pr.ast,log, filename) ;
+		nodent.<span class="apidocCodeKeywordSpan">asynchronize</span>(pr,undefined,parseOpts,log) ;
+		nodent.prettyPrint(pr,parseOpts) ;
+		mod._compile(pr.code, pr.filename);
+	}
+};
+
+// Things that DON&#x27;T depend on initOpts (or config, and therefore nodent)
+function asyncify(promiseProvider) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodent.arboriculture.babelLiteralNode" id="apidoc.element.nodent.arboriculture.babelLiteralNode">
+        function <span class="apidocSignatureSpan">nodent.arboriculture.</span>babelLiteralNode
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function babelLiteralNode(value) {
+    if (value === null)
+        return {
+        type: &#x27;NullLiteral&#x27;,
+        value: null,
+        raw: &#x27;null&#x27;
+    };
+    if (value === true || value === false)
+        return {
+        type: &#x27;BooleanLiteral&#x27;,
+        value: value,
+        raw: JSON.stringify(value)
+    };
+    if (value instanceof RegExp) {
+        var str = value.toString();
+        var parts = str.split(&#x27;/&#x27;);
+        return {
+            type: &#x27;RegExpLiteral&#x27;,
+            value: value,
+            raw: str,
+            pattern: parts[1],
+            flags: parts[2]
+        };
+    }
+    if (typeof value === &#x27;number&#x27;)
+        return {
+        type: &#x27;NumericLiteral&#x27;,
+        value: value,
+        raw: JSON.stringify(value)
+    };
+    return {
+        type: &#x27;StringLiteral&#x27;,
+        value: value,
+        raw: JSON.stringify(value)
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	var r = { origCode:code.toString(), filename:origFilename } ;
+	try {
+		r.ast = parser.parse(r.origCode, opts &#x26;&#x26; opts.parser) ;
+		if (opts.babelTree) {
+			parser.treeWalker(r.ast,function(node,descend,path){
+				if (node.type===&#x27;Literal&#x27;)
+					path[0].replace(treeSurgeon.<span class="apidocCodeKeywordSpan">babelLiteralNode</span>(node.value)) ;
+				else if (node.type===&#x27;Property&#x27;) {
+				    // Class/ObjectProperty in babel6
+				    if (path[0].parent.type===&#x27;ClassBody&#x27;){
+				        // There&#x27;s no easy mapping here as it appears to be borderline in the specification?
+				        // It&#x27;s definitely a kind of ClassProperty tho....
+                        node.type = &#x27;ClassProperty&#x27; ;
+				    } else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodent.arboriculture.printNode" id="apidoc.element.nodent.arboriculture.printNode">
+        function <span class="apidocSignatureSpan">nodent.arboriculture.</span>printNode
+        <span class="apidocSignatureSpan">(n)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function printNode(n) {
+    if (!n) return &#x27;&#x27; ;
+    if (Array.isArray(n))
+        return n.map(printNode).join(&#x22;|\n&#x22;);
+    try {
+        return outputCode(n) ; //+&#x22;\t//@&#x22;+Object.keys(n).filter(function(k){ return k[0]===&#x27;$&#x27;}).map(function(k){ return k+&#x22;:&#x22;+n
+[k] });
+    } catch (ex) {
+        return ex.message + &#x22;: &#x22; + (n &#x26;&#x26; n.type);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodent.map" id="apidoc.module.nodent.map">module nodent.map</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodent.map.map" id="apidoc.element.nodent.map.map">
+        function <span class="apidocSignatureSpan">nodent.</span>map
+        <span class="apidocSignatureSpan">(nodent, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">map = function (nodent, opts) {
+    if (!opts) opts = {} ;
+    if (!opts.Promise)
+        opts.Promise = global.Promise || nodent.Thenable ;
+
+	function map(what,result,asyncFn) {
+		var hasError = false ;
+		if (typeof what==&#x22;number&#x22;) {
+			var period = [] ;
+			period.length = Math.floor(what) ;
+			period.forEach = function(fn) {
+				for (var i=0; i&#x3c;period.length; i++)
+					fn.apply(null,[i,i,period]) ;
+			} ;
+			return map(period,result,asyncFn) ;
+		}
+
+		var isArray = Array.isArray(what) ;
+		var context = new MapError() ;
+		if (!asyncFn &#x26;&#x26; (typeof result in {&#x27;function&#x27;:true,&#x27;undefined&#x27;:true})) {
+			asyncFn = result ;
+			result = isArray?[]:{} ;
+		}
+		var array = isArray?what:Object.keys(what) ;
+		return new (opts.Promise)(function ($return,$error) {
+			var len = array.length ;
+			if (len==0)
+				return $return(result) ;
+
+			array.forEach(function(e,i,ar){
+				function complete(r) {
+					if (r instanceof Object &#x26;&#x26; typeof r.then===&#x22;function&#x22;)
+						return r.then(complete,completeError) ;
+					
+					var k = isArray?i:e ;
+					if (k in result) {
+						context.message = &#x22;nodent.map: multiple $returns/errors at &#x22;+k ;
+						return $error(context) ;
+					}
+					result[k] = r ;
+					len -= 1 ;
+					if (len==0) {
+						if (hasError) {
+							context.message = Object.keys(hasError).map(function(e){ return e+&#x22;: &#x22;+hasError[e].message }).join(&#x22;, &#x22;);	
+							context.results = result ;
+							return $error(context) ;
+						}
+						return $return(result) ;
+					}
+					else if (len&#x3c;0) {
+						context.message = &#x22;nodent.map: Excess $returns/errors at &#x22;+k ;
+						return $error(context) ;
+					}
+				} ;
+				function completeError(x) {
+					if (!(x instanceof Error))
+						x = new Error(x) ;
+					if (opts.throwOnError) {
+						hasError = hasError || {} ;
+						hasError[isArray?i:e] = x ;
+					}
+					complete(x) ;
+				}
+				
+				if (asyncFn) {
+					asyncFn.apply(this,arguments).then(complete,completeError);	
+				} else {
+					var f = isArray?e:what[e] ;
+					if (nodent.isThenable(f))
+						f.then(complete,completeError);
+					else
+						complete(f) ;
+				}
+			}) ;
+		});
+	}
+	map.MapError = MapError ;
+	return map ;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+					+ desc.substring(0,desc.length-1)
+					+ &#x22; =&#x3e; \u2026&#x22;+position.source+&#x22;:&#x22;+position.line+&#x22;:&#x22;+position.column
+					+ (frame.getFunctionName()?&#x22;)&#x22;:&#x22;&#x22;);
+			}
+		}
+		return &#x27;\n    at &#x27;+frame;
+	}
+	return error + stack.<span class="apidocCodeKeywordSpan">map</span>(mappedTrace).join(&#x27;&#x27;);
+}
+
+// Set the &#x27;global&#x27; references to the (backward-compatible) versions
+// required by the current version of Nodent
+function setGlobalEnvironment(initOpts) {
+	var codeGenOpts = defaultCodeGenOpts ;
+	/*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodent.map.MapError" id="apidoc.element.nodent.map.MapError">
+        function <span class="apidocSignatureSpan">nodent.map.</span>MapError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MapError(message) {
+  Error.apply(this,arguments) ;
+  this.name = &#x27;MapError&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodent.parser" id="apidoc.module.nodent.parser">module nodent.parser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nodent.parser.parse" id="apidoc.element.nodent.parser.parse">
+        function <span class="apidocSignatureSpan">nodent.parser.</span>parse
+        <span class="apidocSignatureSpan">(code, config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function acornParse(code, config) {
+    var comments = [] ;
+    var options = {
+        ecmaVersion:8,
+        allowHashBang:true,
+        allowReturnOutsideFunction:true,
+        allowImportExportEverywhere:true,
+        locations:true,
+        onComment:comments
+    } ;
+
+    if (!(config &#x26;&#x26; config.noNodentExtensions) || parseInt(acorn.version) &#x3c; 4) {
+        if (!alreadyInstalledPlugin) {
+            if (parseInt(acorn.version) &#x3c; 4)
+                console.warn(&#x22;Nodent: Warning - noNodentExtensions option requires acorn &#x3e;=v4.x. Extensions installed.&#x22;) ;
+            require(&#x27;acorn-es7-plugin&#x27;)(acorn) ;
+            alreadyInstalledPlugin = true ;
+        }
+        options.plugins = options.plugins || {} ;
+        options.plugins.asyncawait = {asyncExits:true, awaitAnywhere:true} ;
+    }
+
+    if (config)
+        for (var k in config)
+            if (k !== &#x27;noNodentExtensions&#x27;)
+                options[k] = config[k] ;
+
+    var ast = acorn.parse(code,options) ;
+
+    // attach comments to the most tightly containing node
+    treeWalker(ast,function(node,descend,path){
+        descend() ;
+        while (comments.length &#x26;&#x26; node.loc &#x26;&#x26;
+            (node.loc.start.line &#x3e;= comments[0].loc.start.line &#x26;&#x26; node.loc.end.line&#x3e;=comments[0].loc.end.line)) {
+            node.$comments = node.$comments||[] ;
+            node.$comments.push(comments.shift()) ;
+        }
+    }) ;
+    return ast ;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	            filename = require(&#x27;path&#x27;).dirname(filename) ;
+
+	        var packagePath = require(&#x27;resolve&#x27;).sync(&#x27;package.json&#x27;,{
+	            moduleDirectory:[&#x27;&#x27;],
+	            extensions:[&#x27;&#x27;],
+	            basedir:filename
+	        }) ;
+	        var packageOptions = JSON.<span class="apidocCodeKeywordSpan">parse</span>(fs.readFileSync(packagePath)).nodent.directive
+[set] ;
+	    } catch(ex) {
+	        // Meh
+	    }
+	}
+	try {
+		parseOpts = copyObj([optionSets[set],packageOptions,regex[2] &#x26;&#x26; JSON.parse(regex[2])]);
+	} catch(ex) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodent.parser.part" id="apidoc.element.nodent.parser.part">
+        function <span class="apidocSignatureSpan">nodent.parser.</span>part
+        <span class="apidocSignatureSpan">(code, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function partialParse(code, args) {
+  if (!parseCache[code]) {
+    parseCache[code] = acornParse(code,{
+      noNodentExtensions:true, // The partial parser only ever parses ES5
+      locations:false,
+      ranges:false,
+      onComment:null
+    }) ;
+  }
+
+  var result = substitute(parseCache[code]) ;
+  return {body:result.body, expr:result.body[0].type===&#x27;ExpressionStatement&#x27; ? result.body[0].expression : null} ;
+
+<span class="apidocCodeCommentSpan">  /* parse and substitute:
+   *
+   *    $1      Substitute the specified expression. If $1 occupies a slot which is an array of expressions (e.g arguments, params
+)
+   *            and the passed argument is an array, subtitute the whole set
+   *    {$:1}   Substitute a single statement
+   *
+   */
+</span>  function substitute(src,dest) {
+    if (Array.isArray(dest) &#x26;&#x26; !Array.isArray(src))
+        throw new Error(&#x22;Can&#x27;t substitute an array for a node&#x22;) ;
+
+    dest = dest || {} ;
+    Object.keys(src).forEach(function(k){
+      if (!(src[k] instanceof Object))
+          return dest[k] = src[k] ;
+
+      function moreNodes(v){ if (typeof v===&#x22;function&#x22;) v = v() ; dest = dest.concat(v) ; return dest };
+      function copyNode(v){ if (typeof v===&#x22;function&#x22;) v = v() ; dest[k] = v ; return dest };
+
+      // The src is an array, so create/grow the destination
+      // It could an an array of expressions $1,$2,$3 or statements $:1;$:2;$:3;
+      if (Array.isArray(src[k]))
+          return dest[k] = substitute(src[k],[]) ;
+
+      var p ;
+      if (Array.isArray(dest))
+          p = moreNodes ;
+      else
+          p = copyNode ;
+
+      // Substitute a single identifier $.. with an expression (TODO: test provided arg is an expression node)
+      if (src[k].type===&#x27;Identifier&#x27; &#x26;&#x26; src[k].name[0]===&#x27;$&#x27;)
+          return p(args[src[k].name.slice(1)]) ;
+
+      // Substitute a single labeled statement $:.. with a statement (TODO: test provided arg is a statement node)
+      if (src[k].type === &#x27;LabeledStatement&#x27; &#x26;&#x26; src[k].label.name===&#x27;$&#x27;) {
+          var spec = src[k].body.expression ;
+          return p(args[spec.name || spec.value]) ;
+      }
+
+      // Magic label to set call a function to modify a statement node  $$method: &#x3c;statement&#x3e;
+      // The newNode = args.method(oldNode)
+      if (src[k].type === &#x27;LabeledStatement&#x27; &#x26;&#x26; src[k].label.name.slice(0,2)===&#x27;$$&#x27;) {
+          return p(args[src[k].label.name.slice(2)](substitute(src[k]).body)) ;
+      }
+
+      return p(substitute(src[k])) ;
+    }) ;
+    return dest ;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+        if (opts.noRuntime) {
+if (arg) {
+    if (examine(arg).isLiteral) {
+        throw new Error(&#x22;Nodent: &#x27;noRuntime&#x27; option only compatible with -promise and -engine modes&#x22;) ;
+    }
+    // Add a global synchronous exception handler to (left)
+    left.body.body = parser.<span class="apidocCodeKeywordSpan">part</span>(&#x22;try {$:0} catch($2) {return $1($2)}&#x22;,[cloneNode
+(left.body),arg,ident(&#x27;$boundEx&#x27;)]).body ;
+} else if (opts.es6target &#x26;&#x26; !left.id &#x26;&#x26; left.type.indexOf(&#x22;Function&#x22;)===0) {
+    left.type = &#x27;ArrowFunctionExpression&#x27; ;
+    return left ;
+}
+if (opts.es6target &#x26;&#x26; !left.id) {
+    left.type = &#x27;ArrowFunctionExpression&#x27; ;
+    return left;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nodent.parser.treeWalker" id="apidoc.element.nodent.parser.treeWalker">
+        function <span class="apidocSignatureSpan">nodent.parser.</span>treeWalker
+        <span class="apidocSignatureSpan">(n, walker, state)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function treeWalker(n, walker, state){
+    if (!state) {
+        state = [{self:n}] ;
+        state.replace = function(pos,newNode) {
+            state[pos].replace(newNode) ;
+        }
+    }
+
+    function goDown(ref) {
+        ref.replace = referencePrototypes.replace ;
+        ref.append = referencePrototypes.append ;
+        if (ref.index) {
+            Object.defineProperties(ref, {index:{enumerable:true,get:referencePrototypes.index}}) ;
+            ref.remove = referencePrototypes.removeElement ;
+        } else {
+            ref.remove = referencePrototypes.removeNode ;
+        }
+        state.unshift(ref) ;
+        treeWalker(ref.self,walker,state) ;
+        state.shift() ;
+    }
+
+    function descend() {
+        if (!(n.type in acornBase)) {
+            // We don&#x27;t know what type of node this is - it&#x27;s not in the ESTree spec,
+            // (maybe a &#x27;react&#x27; extension?), so just ignore it
+        } else {
+            acornBase[n.type](n,state,function down(sub,_,derivedFrom){
+                if (sub===n)
+                    return acornBase[derivedFrom || n.type](n,state,down) ;
+
+                var keys = Object.keys(n) ;
+                for (var i=0; i&#x3c;keys.length; i++){
+                    var v = n[keys[i]] ;
+                    if (Array.isArray(v)) {
+                        if (v.indexOf(sub)&#x3e;=0) {
+                            goDown({
+                                self:sub,
+                                parent:n,
+                                field:keys[i],
+                                index:true
+                            }) ;
+                        }
+                    } else if (v instanceof Object &#x26;&#x26; sub===v) {
+                        goDown({
+                            self:sub,
+                            parent:n,
+                            field:keys[i]
+                        }) ;
+                    }
+                }
+            }) ;
+        }
+    } ;
+    walker(n,descend,state) ;
+    return n ;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	if (typeof __sourceMapping===&#x22;object&#x22; &#x26;&#x26; opts===undefined)
+		opts = __sourceMapping ;
+
+	var r = { origCode:code.toString(), filename:origFilename } ;
+	try {
+		r.ast = parser.parse(r.origCode, opts &#x26;&#x26; opts.parser) ;
+		if (opts.babelTree) {
+			parser.<span class="apidocCodeKeywordSpan">treeWalker</span>(r.ast,function(node,descend,path){
+				if (node.type===&#x27;Literal&#x27;)
+					path[0].replace(treeSurgeon.babelLiteralNode(node.value)) ;
+				else if (node.type===&#x27;Property&#x27;) {
+				    // Class/ObjectProperty in babel6
+				    if (path[0].parent.type===&#x27;ClassBody&#x27;){
+				        // There&#x27;s no easy mapping here as it appears to be borderline in the specification?
+				        // It&#x27;s definitely a kind of ClassProperty tho....
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nodent.runtime" id="apidoc.module.nodent.runtime">module nodent.runtime</a></h1>
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
